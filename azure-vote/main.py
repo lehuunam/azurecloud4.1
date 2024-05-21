@@ -22,19 +22,19 @@ from opencensus.ext.flask.flask_middleware import FlaskMiddleware
 
 # Logging
 logger = logging.getLogger(__name__)
-logger.addHandler(AzureLogHandler(connection_string='InstrumentationKey=1f3adb16-f2e2-46ec-b733-7ea10839757a'))
+logger.addHandler(AzureLogHandler(connection_string='InstrumentationKey=24961459-d9d9-40cb-a6e1-b398ba1ecc87'))
 
 
 # Metrics
 exporter = metrics_exporter.new_metrics_exporter(
     enable_standard_metrics=True,
-    connection_string='InstrumentationKey=1f3adb16-f2e2-46ec-b733-7ea10839757a'
+    connection_string='InstrumentationKey=24961459-d9d9-40cb-a6e1-b398ba1ecc87'
 )
 
 # Tracing
 tracer = Tracer(
     exporter = AzureExporter(
-        connection_string = 'InstrumentationKey=1f3adb16-f2e2-46ec-b733-7ea10839757a'),
+        connection_string = 'InstrumentationKey=24961459-d9d9-40cb-a6e1-b398ba1ecc87'),
     sampler = ProbabilitySampler(1.0),
 )
 
@@ -43,7 +43,7 @@ app = Flask(__name__)
 # Requests
 middleware = FlaskMiddleware(
     app,
-    exporter=AzureExporter(connection_string='InstrumentationKey=1f3adb16-f2e2-46ec-b733-7ea10839757a'),
+    exporter=AzureExporter(connection_string='InstrumentationKey=24961459-d9d9-40cb-a6e1-b398ba1ecc87'),
     sampler=ProbabilitySampler(rate=1.0),
 )
 # Load configurations from environment or config file
