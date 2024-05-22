@@ -19,7 +19,7 @@ from opencensus.trace.tracer import Tracer
 stats = stats_module.stats
 view_manager = stats.view_manager
  
-instrumentationKey = "ae3fb6cd-bc4f-4dbb-a7c6-0a0d8fe9c325"
+instrumentationKey = "1e5a346b-1201-4bf0-b6c6-2775475185e6"
  
 # Logging
 config_integration.trace_integrations(["logging"])
